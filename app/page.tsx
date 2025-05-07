@@ -1,10 +1,11 @@
 import styles from '../styles/Profil.module.css';
+import Image from 'next/image';
 
 export default function Profil() {
   const produk = [
-    { id: 1, nama: 'Sambal Pedas ', harga: 'Rp18.000', gambar: '/g1.png' },
-    { id: 2, nama: 'Keripik Pisang Coklat', harga: 'Rp12.000', gambar: '/g2.png' },
-    { id: 3, nama: 'Sambal Botol Pedas', harga: 'Rp15.000', gambar: '/g3.png' },
+    { id: 1, nama: 'Bumbu Dapur Toples', harga: 'Rp18.000', gambar: '/image/g1.png' },
+    { id: 2, nama: 'Bumbu Pedas', harga: 'Rp12.000', gambar: '/image/g2.png' },
+    { id: 3, nama: 'Bumbu Dapur', harga: 'Rp15.000', gambar: '/image/g3.png' },
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function Profil() {
         <div className={styles.grid}>
           {produk.map((item) => (
             <div key={item.id} className={styles.card}>
-              <img src={item.gambar} alt={item.nama} className={styles.image} />
+              <Image src={item.gambar} alt={item.nama} width={200} height={120} className={styles.image} />
               <h4>{item.nama}</h4>
               <p className={styles.harga}>{item.harga}</p>
               <button className={styles.button}>Lihat Detail</button>
@@ -51,8 +52,8 @@ export default function Profil() {
       <div className={styles.section}>
         <h2>Galeri Kantor & Produksi</h2>
         <div className={styles.gallery}>
-          <img src="/g4.png" alt="Kantor 1" />
-          <img src="/g5.png" alt="Kantor 2" />
+          <Image src='/image/g4.png' alt='Kantor 1' width={250} height={160} />
+          <Image src='/image/g5.png' alt='Kantor 2' width={250} height={160} />
         </div>
       </div>
 
@@ -60,11 +61,16 @@ export default function Profil() {
         <h2>Testimoni Pelanggan</h2>
         <div className={styles.testimoni}>
           <div className={styles.testiCard}>
-            <img src="/g6.png" alt="Pelanggan 1" />
-            <p>"Produk MAKANANKITA selalu jadi stok wajib di rumah. Enak dan bergizi!"</p>
+            <Image
+              src='/image/g6.png'
+              alt='Pelanggan 1'
+              width={80}
+              height={80}
+              className={styles.testiImage}
+            />
+            <p>Produk MAKANANKITA selalu jadi stok wajib di rumah. Enak dan bergizi</p>
             <strong>- Ibu Tri, Jakarta</strong>
           </div>
-       
         </div>
       </div>
 
